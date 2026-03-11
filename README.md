@@ -1,4 +1,4 @@
-#Project Overview 
+# Project Overview 
 This project is a fully automated Linux cloud‑monitoring system built on an Ubuntu Server VM. It uses scheduled cron jobs to collect system metrics, generate health reports, and upload logs to an AWS S3 bucket for centralized storage. An S3 lifecycle rule automatically deletes old logs to optimize storage costs. All scripts, automation logic, and architecture documentation are version‑controlled through GitHub.
 This project demonstrates practical skills in:
 Linux system administration
