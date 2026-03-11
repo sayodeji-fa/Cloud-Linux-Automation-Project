@@ -88,7 +88,8 @@ Benefits
 -Cloud‑native cost optimization
 -Keeps bucket clean and manageable
 
-# 4. Repository Structure 
+## 4. Repository Structure 
+```
 Cloud-Linux-Automation-Project/
 │
 ├── server/
@@ -100,5 +101,6 @@ Cloud-Linux-Automation-Project/
 │
 ├── README.md
 └── (additional files)
+```
 
 
