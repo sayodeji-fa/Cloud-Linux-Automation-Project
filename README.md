@@ -11,3 +11,6 @@ Store datasets and outputs in S3
 Monitor system performance and logs with CloudWatch
 Apply system hardening and secure access controls
 
+## Architecture Diagram 
+This diagram shows the automation flow between the Ubuntu VM, cron jobs, AWS S3, lifecycle rules, and Github intergration.
+![Cloud Architecture](https://github.com/sayodeji-fa/Cloud-Linux-Automation-Project/blob/main/assets/Cloud%20Architech%20Diagram-dark.drawio.png?raw=true)
