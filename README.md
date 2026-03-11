@@ -89,4 +89,16 @@ Benefits
 -Keeps bucket clean and manageable
 
 # 4. Repository Structure 
+Cloud-Linux-Automation-Project/
+│
+├── server/
+│   ├── system-info.sh
+│   ├── health-check.sh
+│
+├── assets/
+│   ├── Cloud Architech Diagram-dark.drawio.png
+│
+├── README.md
+└── (additional files)
+
 
