@@ -144,5 +144,101 @@ Each run generates a timestamped log file.
 -Architecture diagram included
 -README provides full project documentation
 ```
+## Technologies Used
+This project integrates multiple technologies across Linux, cloud services, automation, and version control:
 
+Operating System
+```
+Ubuntu Server (Linux environment for scripting and automation)
+```
+Scripting & Automation
+```
+Bash scripting for system monitoring and log generation
+Cron for scheduled task automation (hourly and daily jobs)
+```
+Cloud Services
+```
+AWS S3 for centralized log storage
+S3 Lifecycle Rules for automated log retention and cleanup
+AWS CLI for programmatic uploads from the VM
+```
+Version Control & Documentation
+```
+Git for tracking changes
+GitHub for hosting code, diagrams, and documentation
+Draw.io  for architecture diagram design
+```
 
+## Setup Instructions 
+1. Clone the repository
+   ```
+   git clone https://github.com/sayodeji-fa/Cloud-Linux-Automation-Project.git
+   cd Cloud-Linux-Automation-Project
+   ```
+2. Install AWS CLI
+   ```
+   curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+   unzip awscliv2.zip
+   sudo ./aws/install
+   ```
+3. Configure AWS Credentials
+   ```
+   aws configure
+   ```
+   Provide:
+   - AWS Access Key
+   - AWS Secret Key
+   (Both keys are only displayed ONCE! , make sure to copy/write it down somewhere secure)
+   - Region (ex. us-east-1)
+   - Output format (json)
+  
+ 4. Make the scripts Executable
+    ```
+    chmod +x server/system-info.sh
+    chmod +x server/health-check.sh
+    ```
+5. Set Up Cron Jobs (what the scripts are doing)
+
+Open the cron editor:
+```
+crontab -e
+```
+Add the following at the end of the code:
+```
+# Daily system snapshot at 12 PM
+0 12 * * * /home/ubuntu/Cloud-Linux-Automation-Project/server/system-info.sh
+
+# Hourly health check
+0 * * * * /home/ubuntu/Cloud-Linux-Automation-Project/server/health-check.sh
+```
+6. Verify Logs in S3 (AWS)
+After the first con run, check your AWS S3 bucket to see if the updated log files were uploaded
+
+# Future Enhancements 
+This project can be expanded with additional cloud and automation features:
+
+Cloud Monitoring & Alerts
+```
+Integrate AWS CloudWatch for real‑time metrics
+Add SNS notifications for high CPU, low disk space, or failed scripts
+```
+Server Hardening
+```
+Add automated security patching
+Implement log rotation and compression
+```
+Infrastructure as Code
+```
+Use Terraform to deploy the S3 bucket and lifecycle rules
+Automate VM provisioning with cloud-init or Ansible
+```
+Dashboarding
+```
+Build a Grafana dashboard using CloudWatch metrics
+Visualize trends from the hourly/daily logs
+```
+CI/CD Integration
+```
+Add GitHub Actions to lint scripts and validate changes
+Automate deployment of updated scripts to the VM
+```
