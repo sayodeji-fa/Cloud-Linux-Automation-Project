@@ -107,11 +107,13 @@ Cloud-Linux-Automation-Project/
 This project automates Linux system monitoring and cloud log management using cron jobs, Bash scripts, and AWS S3. The workflow operates as follows:
 
 1. Cron Schedules the Automation
+```
 -system-info.sh runs daily at 12:00 PM
 -health-check.sh runs every hour
 -Cron ensures the scripts execute reliably without manual intervention
-
+```
 2. Scripts Collect System Metrics
+```   
 -Each script gathers specific system information:
 -CPU load and usage
 -Memory utilization
@@ -119,25 +121,28 @@ This project automates Linux system monitoring and cloud log management using cr
 -System uptime
 -Network information
 -Top resource‑consuming processes
-
+```
 Each run generates a timestamped log file.
 
 3. Logs Are Uploaded to AWS S3
+ ```  
 -Both scripts automatically upload their logs to an S3 bucket using the AWS CLI:
 -Centralized cloud storage
 -Accessible from anywhere
 -Organized by timestamp
-
+```
 4. S3 Lifecycle Rule Manages Storage
+ ```  
 -A lifecycle rule automatically:
 -Deletes logs older than 30 days
 -Reduces storage costs
 -Keeps the bucket clean and manageable
-
+```
 5. GitHub Stores All Code and Documentation
+  ``` 
 -Scripts are version‑controlled
 -Architecture diagram included
 -README provides full project documentation
-
+```
 
 
