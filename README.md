@@ -242,3 +242,8 @@ CI/CD Integration
 Add GitHub Actions to lint scripts and validate changes
 Automate deployment of updated scripts to the VM
 ```
+
+## Project Evolution (v2)
+This project began as a Linux-based automation system running on an Ubuntu VM.
+It has since evolved into a fully AWS-native analytics pipeline using Lambda, EventBridge, S3, Athena, and QuickSight.
+Both versions are maintained in this repository to demonstrate the progression from traditional server automation to modern cloud-native architecture.
